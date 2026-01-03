@@ -1,0 +1,344 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SIDEBAR CONTAINER
+===================================================== */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  color: #f9fafb;
+  padding: 25px 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  overflow-y: auto;
+  animation: slideIn 0.6s ease forwards;
+}
+
+/* =====================================================
+   SIDEBAR TITLE
+===================================================== */
+.sidebar h3 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e0e7ff;
+  position: relative;
+}
+
+.sidebar h3::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  border-radius: 10px;
+}
+
+/* =====================================================
+   MENU LIST
+===================================================== */
+.sidebar ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+/* =====================================================
+   MENU ITEM
+===================================================== */
+.sidebar ul li {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+/* =====================================================
+   MENU LINKS
+===================================================== */
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #c7d2fe;
+  text-decoration: none;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* =====================================================
+   LEFT GLOW BAR
+===================================================== */
+.sidebar ul li a::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #6366f1, #818cf8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* =====================================================
+   RIPPLE HOVER EFFECT
+===================================================== */
+.sidebar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+
+/* =====================================================
+   LINK TEXT
+===================================================== */
+.sidebar ul li a span {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   HOVER STATE
+===================================================== */
+.sidebar ul li a:hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+.sidebar ul li a:hover::before {
+  opacity: 1;
+}
+
+.sidebar ul li a:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* =====================================================
+   ACTIVE MENU
+===================================================== */
+.sidebar ul li a.active {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.5);
+}
+
+.sidebar ul li a.active::before {
+  opacity: 1;
+}
+
+/* =====================================================
+   ICON PLACEHOLDER SUPPORT
+===================================================== */
+.sidebar ul li a i {
+  font-size: 18px;
+  min-width: 22px;
+  text-align: center;
+  color: #a5b4fc;
+  transition: transform 0.3s ease;
+}
+
+.sidebar ul li a:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* =====================================================
+   ADMIN THEME HIGHLIGHT
+===================================================== */
+.sidebar.admin {
+  background: linear-gradient(180deg, #020617, #0f172a);
+}
+
+.sidebar.admin h3 {
+  color: #fde68a;
+}
+
+/* =====================================================
+   EMPLOYEE THEME HIGHLIGHT
+===================================================== */
+.sidebar.employee {
+  background: linear-gradient(180deg, #0f172a, #1e3a8a);
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #818cf8);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =====================================================
+   SIDEBAR COLLAPSE EFFECT (OPTIONAL)
+===================================================== */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.collapsed h3 {
+  font-size: 0;
+}
+
+.sidebar.collapsed ul li a span {
+  display: none;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   SUBTLE GLOW
+===================================================== */
+.sidebar ul li a:hover {
+  box-shadow: inset 0 0 15px rgba(99, 102, 241, 0.25);
+}
+
+/* =====================================================
+   EXTRA POLISH
+===================================================== */
+.sidebar ul li a {
+  letter-spacing: 0.4px;
+}
+
+.sidebar ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   FOOTER SPACE (FUTURE USE)
+===================================================== */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 13px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ===== SIDEBAR HEADER ===== */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  color: #c7d2fe;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* ===== ICON STYLE ===== */
+.sidebar svg {
+  min-width: 22px;
+  color: #a5b4fc;
+}
+
+/* ===== COLLAPSED MODE ===== */
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.sidebar.collapsed ul li a {
+  justify-content: center;
+}
+
+.sidebar.collapsed ul li a span {
+  display: none;
+}
+
+.sidebar.collapsed .menu-toggle {
+  margin-left: auto;
+}
+
+/* ===== ACTIVE LINK ===== */
+.sidebar ul li a.active {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.6);
+  color: white;
+}
+
+.sidebar ul li a.active svg {
+  color: white;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    z-index: 999;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+

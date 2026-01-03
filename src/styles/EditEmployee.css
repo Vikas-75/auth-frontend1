@@ -1,0 +1,396 @@
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* ============================= */
+/* HEADINGS */
+/* ============================= */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ============================= */
+/* FORM CARD */
+/* ============================= */
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================= */
+/* INPUTS */
+/* ============================= */
+.modal-content input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* ============================= */
+/* SELECT */
+/* ============================= */
+.modal-content select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.modal-content select:focus {
+  border-color: #6366f1;
+}
+
+/* ============================= */
+/* LABELS */
+/* ============================= */
+label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+/* ============================= */
+/* BUTTON WRAPPER */
+/* ============================= */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+/* ============================= */
+/* BUTTON COMMON */
+/* ============================= */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+/* ============================= */
+/* SAVE BUTTON */
+/* ============================= */
+.approve {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.approve:hover {
+  background-color: #4338ca;
+}
+
+.approve:active {
+  transform: scale(0.98);
+}
+
+/* ============================= */
+/* CANCEL BUTTON */
+/* ============================= */
+.reject {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.reject:hover {
+  background-color: #dc2626;
+}
+
+.reject:active {
+  transform: scale(0.98);
+}
+
+/* ============================= */
+/* DISABLED */
+/* ============================= */
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ============================= */
+/* ERROR STATES */
+/* ============================= */
+input.error {
+  border-color: #ef4444;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 12px;
+}
+
+/* ============================= */
+/* SUCCESS STATES */
+/* ============================= */
+.success-text {
+  color: #16a34a;
+  font-size: 13px;
+}
+
+/* ============================= */
+/* TABLE STYLES */
+/* ============================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th {
+  background-color: #f3f4f6;
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* TABLE ROW HOVER */
+/* ============================= */
+table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #111827;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+}
+
+/* ============================= */
+/* SIDEBAR LINKS */
+/* ============================= */
+.sidebar a {
+  display: block;
+  color: #d1d5db;
+  padding: 12px 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.sidebar a:hover {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+.navbar {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* ============================= */
+/* NAVBAR TITLE */
+/* ============================= */
+.navbar h3 {
+  font-size: 18px;
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ============================= */
+/* STAT BOX */
+/* ============================= */
+.stat-box {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* STAT TITLE */
+/* ============================= */
+.stat-box h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ============================= */
+/* STAT VALUE */
+/* ============================= */
+.stat-box p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ============================= */
+/* LOADER */
+/* ============================= */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ============================= */
+/* LOADER ANIMATION */
+/* ============================= */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================= */
+/* MODAL */
+/* ============================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================= */
+/* MODAL BOX */
+/* ============================= */
+.modal-box {
+  background-color: #ffffff;
+  width: 400px;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+}
+
+/* ============================= */
+/* SMALL DEVICES */
+/* ============================= */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

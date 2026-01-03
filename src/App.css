@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.container {
+  width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+button {
+  padding: 6px 12px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.app-content {
+  padding-top: 70px; /* navbar height */
+}
+
+
+.pending { color: orange; }
+.live { color: green; }
+.rejected { color: red; }

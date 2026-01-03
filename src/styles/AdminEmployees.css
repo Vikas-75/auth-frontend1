@@ -1,0 +1,293 @@
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin-top: 200px;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.content {
+/* shift content to the right of sidebar */
+  padding: 25px 30px;
+  transition: margin-left 0.3s ease;
+}
+
+.page-header {
+    margin: top 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h2 {
+  font-size: px;
+  font-weight: 600;
+}
+
+.back-btn {
+   width: 250px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   TABLE STYLING
+   ========================= */
+
+.data-table-wrapper {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.data-table {
+  min-width: 500px;
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.data-table th {
+  background: #1f2937;
+  color: #fff;
+  font-weight: 600;
+}
+
+.data-table tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+.data-table tr:hover {
+  background: #e0e7ff;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button.edit,
+button.danger {
+  padding: 6px 12px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button.edit {
+  background: #3b82f6;
+  color: white;
+}
+
+button.edit:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+button.danger {
+  background: #ef4444;
+  color: white;
+}
+
+button.danger:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MODALS (FOR ADD/EDIT EMPLOYEE)
+   ========================= */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 41, 55, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.modal-content button {
+  width: 48%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.modal-content .save-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.modal-content .save-btn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+.modal-content .cancel-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.modal-content .cancel-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+@media (max-width: 1024px) {
+  .content {
+    margin-left: 220px; /* sidebar shrinks */
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0; /* sidebar collapses */
+    padding: 15px;
+  }
+
+  .data-table {
+    min-width: 100%;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  button.edit,
+  button.danger {
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+
+/* =========================
+   STATUS BADGES
+   ========================= */
+
+.status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status.EMPLOYEE {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status.ADMIN {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+
+
+.text-center { text-align: center; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+
+.shadow-sm { box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+.shadow-md { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+
+.rounded { border-radius: 8px; }
+
+.transition { transition: all 0.3s ease; }
